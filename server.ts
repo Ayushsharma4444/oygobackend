@@ -24,6 +24,9 @@ app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 // Default 
+app.get("/", (req: Request, res: Response)  => {
+    res.status(201).json({ message: "Welcome to IYGO " });
+})
 app.get("/api", (req: Request, res: Response)  => {
     res.status(201).json({ message: "Welcome to Hotel Booking App" });
 })
